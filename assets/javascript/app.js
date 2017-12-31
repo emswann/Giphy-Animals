@@ -6,7 +6,7 @@
 
 $(document).ready(function(){
   var animals = ["lion", "tiger", "wolf", "giraffe", "koala bear",
-                 "skunk", "kangaroo", "badger", "elephant", "dog" ];
+                 "skunk", "kangaroo", "badger", "elephant", "dog"];
 
   /** 
    * @function initialize 

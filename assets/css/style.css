@@ -6,7 +6,17 @@
    REVISION LOG: 
 */
 
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.btn, #animal-input {
+  border-color: #000000;
+}
+
 .btn-animal {
+  background: #4540ff;
+  color: #ffffff;
   margin: 1rem 3rem 1rem 0;
 }
 
@@ -17,4 +27,14 @@
 .img-animal {
   height: 20rem;
   width: 25rem;
+}
+
+#add-animal {
+  background: #ffd400;
+  color: #000000;
+  font-size: 1.6rem;
+}
+
+label {
+  font-size: 1.6rem;
 }
