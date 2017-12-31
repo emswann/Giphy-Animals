@@ -16,6 +16,10 @@ $(document).ready(function(){
     renderButtons();
   })();
 
+  /** 
+   * @function renderButtons 
+   * @description Renders animal buttons based on animals array.
+  */
   function renderButtons() {
     $("#animal-buttons").empty();
 
@@ -28,6 +32,10 @@ $(document).ready(function(){
     }
   }
 
+  /** 
+   * @function renderImages 
+   * @description Renders images based on chosen animal name.
+  */
   function renderImages() {
     const LIMIT = 10;
     var animalName = $(this).data("name");
@@ -68,6 +76,10 @@ $(document).ready(function(){
     });
   }
 
+  /** 
+   * @function toggleImage 
+   * @description Changes the image from still to moving or moving to still based on its current status.
+  */
   function toggleImage() {
     if ($(this).data("isStill")) {
       $(this).data("isStill", false);
@@ -79,6 +91,11 @@ $(document).ready(function(){
     }
   }
 
+  /** 
+   * @function addAnimal 
+   * @description Adds animal to animals array based on input from user.
+   * @throws Error when user inputs a blank name. At least one character is required.
+  */
   function addAnimal() {
     try {
       event.preventDefault();

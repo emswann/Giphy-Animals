@@ -1,3 +1,11 @@
+/* CSS stylesheet to style HTML elements of the Giphy Animals application. Needed to add custom styling not handled with Bootstrap.
+ 
+   NAME: style.css
+   AUTHOR: Elaina Swann
+   DATE: 01/09/2018
+   REVISION LOG: 
+*/
+
 .btn-animal {
   margin: 1rem 3rem 1rem 0;
 }
