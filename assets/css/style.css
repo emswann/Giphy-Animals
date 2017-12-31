@@ -25,12 +25,14 @@ body {
 }
 
 .img-animal {
+  background-position: center;
+  background-size: cover;
   height: 20rem;
   width: 25rem;
 }
 
 #add-animal {
-  background: #ffd400;
+  background: #01e856;
   color: #000000;
   font-size: 1.6rem;
 }

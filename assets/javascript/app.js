@@ -60,16 +60,15 @@ $(document).ready(function(){
         var rating    = $("<label>")
                       .text("Rating: " + response.data[i].rating.toUpperCase());
 
-        var imgAnimal = $("<img>")
-                      .addClass("img-responsive img-animal")
-                      .attr("src", 
-                            response.data[i].images.fixed_height_still.url)
-                      .attr("alt", animalName + " " + i + " Image")
+        var imgAnimal = $("<div>")
+                      .addClass("img-animal")
+                      .css("background-image", "url(" + 
+                            response.data[i].images.downsized_still.url + ")")
                       .data("isStill", true)
                       .data("still", 
-                            response.data[i].images.fixed_height_still.url)
+                            response.data[i].images.downsized_still.url)
                       .data("move", 
-                            response.data[i].images.fixed_height.url);
+                            response.data[i].images.downsized.url);
 
         $("#animal-images").append(divAnimal.append(rating).append(imgAnimal)); 
       }
@@ -83,11 +82,13 @@ $(document).ready(function(){
   function toggleImage() {
     if ($(this).data("isStill")) {
       $(this).data("isStill", false);
-      $(this).attr("src", $(this).data("move"));
+      $(this).css("background-image", "url(" + 
+                  $(this).data("move") + ")");
     }
     else {
       $(this).data("isStill", true);
-      $(this).attr("src", $(this).data("still"));     
+      $(this).css("background-image", "url(" + 
+                  $(this).data("still") + ")");     
     }
   }
 
