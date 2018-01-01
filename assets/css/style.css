@@ -17,12 +17,13 @@ body {
 .btn-animal {
   background: #4540ff;
   color: #ffffff;
-  margin: 1rem 3rem 1rem 0;
+  margin: 1rem;
   min-width: 15rem;
   text-shadow: none;
 }
 
-.div-animal {
+.div-animal, #animal-form {
+  display: inline-block;
   margin: 1rem;
 }
 
@@ -37,16 +38,10 @@ body {
   border-color: #000000;
   color: #000000;
   font-size: 1.6rem;
+  max-width: 25rem;
 }
 
-#add-animal {
-  color: #ffffff;
-  font-size: 1.6rem;
-  text-shadow: none;
-  width: 8.5rem;
-}
-
-#delete-animal {
+#add-animal, #delete-animal {
   color: #ffffff;
   font-size: 1.6rem;
   text-shadow: none;

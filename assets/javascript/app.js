@@ -43,7 +43,6 @@ $(document).ready(function(){
     var APIkey = "u9qdX80ktrplgKRTTlkg4oihZ8LR1Wfq";
     var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=u9qdX80ktrplgKRTTlkg4oihZ8LR1Wfq&q=" + animalName + "&" + "limit=" + LIMIT + "&lang=en";
 
-    console.log(queryURL);
     $.ajax({
       url: queryURL,
       method: "GET"
@@ -55,7 +54,7 @@ $(document).ready(function(){
       /* Create image div and initialize source to still image. */
       for (let i = 0; i < LIMIT; i++) {
         var divAnimal = $("<div>")
-                      .addClass("div-animal pull-left");
+                      .addClass("div-animal");
 
         var rating    = $("<label>")
                       .text("Rating: " + response.data[i].rating.toUpperCase());
@@ -151,7 +150,7 @@ $(document).ready(function(){
   function deleteAnimal() {
     try {
       // type = button (vs. submit), so no default behavior to compensate for.
-      event.preventDefault();
+
       var animal = $("#animal-input").val().trim();
 
       /* Have to input at least one character. Empty string is not allowed. Trim takes care of all blanks input. */
