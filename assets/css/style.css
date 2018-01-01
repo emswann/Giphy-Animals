@@ -10,7 +10,7 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-.btn, #animal-input {
+.btn {
   border-color: #000000;
 }
 
@@ -18,6 +18,8 @@ body {
   background: #4540ff;
   color: #ffffff;
   margin: 1rem 3rem 1rem 0;
+  min-width: 15rem;
+  text-shadow: none;
 }
 
 .div-animal {
@@ -31,12 +33,26 @@ body {
   width: 25rem;
 }
 
-#add-animal {
-  background: #01e856;
+#animal-input {
+  border-color: #000000;
   color: #000000;
   font-size: 1.6rem;
 }
 
-label {
+#add-animal {
+  color: #ffffff;
   font-size: 1.6rem;
+  text-shadow: none;
+  width: 8.5rem;
+}
+
+#delete-animal {
+  color: #ffffff;
+  font-size: 1.6rem;
+  text-shadow: none;
+  width: 8.5rem;
+}
+
+label {
+  font-size: 1.8rem;
 }

@@ -61,12 +61,17 @@
         <div id="animal-form">
           <form>
             <div class="form-group">
-              <label for="animal-input">Add an animal</label>
-              <input type="text" class="form-control" id="animal-input" placeholder="">
+              <label class="control-label" for="animal-input">Enter an animal</label>
+              <input type="text" class="form-control" id="animal-input" placeholder="" autocomplete="off">
             </div>
-            <button type="submit" class="btn btn-default" id="add-animal">
-              Submit
-            </button>
+            <div class="form-group animal-buttons">
+              <button type="submit" class="btn btn-default btn-success" id="add-animal">
+                Add
+              </button>
+              <button type="button" class="btn btn-default btn-danger" id="delete-animal">
+                Delete
+              </button>
+            </div>
           </form>
         </div>
       </div>

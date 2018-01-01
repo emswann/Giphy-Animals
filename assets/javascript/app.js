@@ -93,8 +93,26 @@ $(document).ready(function(){
   }
 
   /** 
+   * @function doesExist 
+   * @description Checks if animal exists in animals array.
+   * @returns {boolean} Returns array index if animal exists or -1 if animal does not exist in animals array.
+  */
+  function findAnimal(animal) {
+    return animals.indexOf(animal);
+  }
+
+  /** 
+   * @function clearInput 
+   * @description Clears input field of the form.
+  */
+  function clearInput() {
+    $("#animal-input").val("");
+  }
+
+  /** 
    * @function addAnimal 
    * @description Adds animal to animals array based on input from user.
+   * @throws Error if animal already exists in animals array.
    * @throws Error when user inputs a blank name. At least one character is required.
   */
   function addAnimal() {
@@ -105,16 +123,57 @@ $(document).ready(function(){
 
       /* Have to input at least one character. Empty string is not allowed. Trim takes care of all blanks input. */
       if (animal.length > 0) {
-        animals.push(animal);
-        renderButtons();
+        if (findAnimal(animal) === -1) {
+          animals.push(animal);
+          renderButtons();
+        }
+        else {
+         throw("Choose another animal to add - " + animal + " already exists.");
+        }
       }
       else {
-        throw("You need to enter an animal name.");
+        throw("You need to enter an animal name - blanks are not acceptable.");
       }
     }
     catch(error) {
       alert(error);
     }
+
+    clearInput();
+  }
+
+  /** 
+   * @function deleteAnimal 
+   * @description Deletes animal from animals array based on input from user.
+   * @throws Error if animal does not exist in animals array.
+   * @throws Error when user inputs a blank name. At least one character is required.
+  */
+  function deleteAnimal() {
+    try {
+      // type = button (vs. submit), so no default behavior to compensate for.
+      event.preventDefault();
+      var animal = $("#animal-input").val().trim();
+
+      /* Have to input at least one character. Empty string is not allowed. Trim takes care of all blanks input. */
+      if (animal.length > 0) {
+        var index = findAnimal(animal);
+        if (index !== -1) {
+          animals.splice(index, 1); /* remove animal from array based on found position. */
+          renderButtons();
+        }
+        else {
+          throw("Choose another animal to delete - " + animal + " does not exist.");
+        }
+      }
+      else {
+        throw("You need to enter an animal name - blanks are not acceptable.");
+      }
+    }
+    catch(error) {
+      alert(error);
+    }
+
+    clearInput();
   }
 
   /** 
@@ -133,9 +192,16 @@ $(document).ready(function(){
 
   /** 
    * @event .on ("click") 
-   * @listens #add-animal When submit button to add animal is chosen. 
+   * @listens #add-animal When add/submit button to add an animal is chosen. 
    * @param {function} addAnimal
   */
   $("#add-animal").on("click", addAnimal);
+
+  /** 
+   * @event .on ("click") 
+   * @listens #delete-animal When delete button to delete an animal is chosen. 
+   * @param {function} deleteAnimal
+  */
+  $("#delete-animal").on("click", deleteAnimal);
 
 });
