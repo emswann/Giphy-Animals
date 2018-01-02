@@ -5,8 +5,8 @@
  */
 
 $(document).ready(function(){
-  var animals = ["lion", "tiger", "wolf", "giraffe", "koala bear",
-                 "skunk", "kangaroo", "badger", "elephant", "dog"];
+  var animals = ["LION", "TIGER", "WOLF", "GIRAFFE", "KOALA BEAR",
+                 "SKUNK", "KANGAROO", "BADGER", "ELEPHANT", "DOG"];
 
   /** 
    * @function initialize 
@@ -118,7 +118,7 @@ $(document).ready(function(){
     try {
       event.preventDefault();
 
-      var animal = $("#animal-input").val().trim();
+      var animal = $("#animal-input").val().trim().toUpperCase();
 
       /* Have to input at least one character. Empty string is not allowed. Trim takes care of all blanks input. */
       if (animal.length > 0) {
@@ -151,7 +151,7 @@ $(document).ready(function(){
     try {
       // type = button (vs. submit), so no default behavior to compensate for.
 
-      var animal = $("#animal-input").val().trim();
+      var animal = $("#animal-input").val().trim().toUpperCase();
 
       /* Have to input at least one character. Empty string is not allowed. Trim takes care of all blanks input. */
       if (animal.length > 0) {
