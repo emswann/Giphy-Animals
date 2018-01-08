@@ -53,7 +53,9 @@ $(document).ready(function(){
     var animalName = $(this).data("name");
 
     var APIkey = "u9qdX80ktrplgKRTTlkg4oihZ8LR1Wfq";
-    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=u9qdX80ktrplgKRTTlkg4oihZ8LR1Wfq&q=" + animalName + "&" + "limit=" + LIMIT + "&lang=en";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + APIkey + "&q=" + animalName + "&" + "limit=" + LIMIT + "&lang=en";
+
+    console.log(queryURL);
 
     $.ajax({
       url: queryURL,
@@ -83,6 +85,9 @@ $(document).ready(function(){
 
         $("#animal-images").append(divAnimal.append(rating).append(imgAnimal)); 
       }
+    }).fail(function(error) {
+      /* Error message is automatically console logged. */
+      renderErrorMessage("Fatal error. See your system administrator.");
     });
   }
 
