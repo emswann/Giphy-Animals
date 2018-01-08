@@ -52,8 +52,15 @@ $(document).ready(function(){
     const LIMIT = 10;
     var animalName = $(this).data("name");
 
-    var APIkey = "u9qdX80ktrplgKRTTlkg4oihZ8LR1Wfq";
-    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + APIkey + "&q=" + animalName + "&" + "limit=" + LIMIT + "&lang=en";
+    var APIkey  = "u9qdX80ktrplgKRTTlkg4oihZ8LR1Wfq";
+    var baseURL = "https://api.giphy.com/v1/gifs/search?";
+
+    var queryURL = baseURL + $.param({
+      "api_key": APIkey,
+      "q"      : animalName,
+      "limit"  : LIMIT,
+      "lang"   : "en"
+    });
 
     console.log(queryURL);
 
