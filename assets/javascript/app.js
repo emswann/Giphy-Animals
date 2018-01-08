@@ -17,6 +17,18 @@ $(document).ready(function(){
   })();
 
   /** 
+   * @function renderErrorMessage 
+   * @description Renders modal with error message when error is thrown/caught.
+   * @param {error} string - Error message to display in modal.
+  */
+  function renderErrorMessage(error) {
+    $("#error-modal-body").empty();
+    $("#error-modal-body").append($("<p>").text(error));
+
+    $("#error-modal").modal("show");
+  }
+
+  /** 
    * @function renderButtons 
    * @description Renders animal buttons based on animals array.
   */
@@ -135,7 +147,7 @@ $(document).ready(function(){
       }
     }
     catch(error) {
-      alert(error);
+      renderErrorMessage(error);
     }
 
     clearInput();
@@ -169,7 +181,7 @@ $(document).ready(function(){
       }
     }
     catch(error) {
-      alert(error);
+      renderErrorMessage(error);
     }
 
     clearInput();
